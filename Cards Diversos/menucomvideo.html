@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scss/menucomvideo.css">
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="logo">MOUNTAIN<br>HOME</div>
+    <video loop muted autoplay fullscreen  class="fullscreen-bg__video" poster="https://wallpaperaccess.com/full/428865.jpg">
+          <source src="https://assets.codepen.io/1651485/Camping+At+A+Forest.mp4" type="video/mp4">
+      </video>
+    <div class="left"></div>
+    <div class="right" data-animation="to-bottom">
+      <a data-text="ABOUT US" href="#">ABOUT US</a>
+      <a data-text="EQUIPMENT" href="#">EQUIPMENT</a>
+      <a data-text="TOURS" href="#">TOURS</a>
+      <a data-text="CONTACT" href="#">CONTACT</a>
+    </div>
+    <div id="menuBtn">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <script>
+      let btn = document.getElementById('menuBtn');
+let left = document.querySelector('.left');
+let right = document.querySelector('.right');
+
+let links = document.querySelectorAll('.right a');
+let backs = ["url(https://cdn.runrepeat.com/storage/uploads/research/Award%20-%20Most%20Livable%20Hiking%20Towns/Hiking%20Town%201.jpg)", 
+             "url(https://www.emsoutdoors.com/wp-content/uploads/2013/08/ice-1.jpg)",
+             "url(https://q-cf.bstatic.com/xdata/images/xphoto/2048x1536/25154224.jpg?k=b0efd520781f5b2e88c4e707b80b7c1a483be914278b68a5df4fc5a3a13280e9&o=)",
+             "url(https://www.wallpaperflare.com/static/679/34/554/nature-landscape-mountains-cabin-wallpaper.jpg)"
+]
+
+let flag = true;
+
+btn.addEventListener("click", ()=>{
+    flag = !flag;
+    if(!flag){
+      left.style.transform = "translateY(0)";
+      right.style.transform = "translateY(0)"; 
+    } else {
+      left.style.transform = "translateY(100vh)";
+      right.style.transform = "translateY(-100vh)";
+    }
+    left.style.background = "url('https://images.unsplash.com/photo-1583138605411-f85466f61638?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"; 
+})
+
+
+for(let i = 0; i < links.length; i++){
+   links[i].addEventListener("mousemove", ()=>{
+      left.style.background = backs[i]; 
+   })
+}
+
+  </script>
+
+</body>
+</html>

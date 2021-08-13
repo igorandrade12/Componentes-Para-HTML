@@ -1,0 +1,107 @@
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  --line-offset: calc((10vh + 8px) / 2);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  background: #021919;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tab {
+  width: calc(10vh + 8px);
+  height: calc(10vh + 8px);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-clip-path: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+          clip-path: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+  shape-outside: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+  z-index: 0;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.tab img {
+  width: 10vh;
+  height: 10vh;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-clip-path: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+          clip-path: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+  shape-outside: polygon(0% 50%, 15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%);
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+[type=radio] {
+  display: none;
+}
+
+.preview-list {
+  background: -webkit-gradient(linear, left top, left bottom, from(#021919), color-stop(#021919), to(#efefef));
+  background: linear-gradient(#021919, #021919 var(--line-offset), #efefef var(--line-offset));
+}
+
+.tab {
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), color-stop(#efefef), to(#021919));
+  background: linear-gradient(#efefef, #efefef var(--line-offset), #021919 var(--line-offset));
+}
+
+[type=radio]:checked ~ label ~ .content {
+  text-align: center;
+  z-index: 8;
+}
+
+[type=radio]:checked ~ label .tab {
+  width: 0;
+}
+
+.content {
+  position: absolute;
+  background: #021919;
+  top: 1vh;
+  left: 0;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content img {
+  height: auto;
+  width: 100vw;
+}
+/*# sourceMappingURL=galeria1.css.map */
